@@ -71,7 +71,7 @@ server_header="Server: kamailio 5.4"
 loadmodule "jsonrpcs.so"
 loadmodule "kex.so"
 loadmodule "corex.so"
-loadmodule "tls.so"
+loadmodule "tlsa.so"
 loadmodule "tm.so"
 loadmodule "tmx.so"
 loadmodule "sl.so"
@@ -126,11 +126,11 @@ modparam("rr", "enable_double_rr", 2)
 modparam("path", "enable_r2", 1)
 
 # ----- tls params -----
-modparam("tls", "tls_method", "TLSv1.2+")
-modparam("tls", "verify_certificate", 0)
-modparam("tls", "require_certificate", 0)
-modparam("tls", "private_key", "/etc/letsencrypt/live/PUBDOMAIN/privkey.pem")
-modparam("tls", "certificate", "/etc/letsencrypt/live/PUBDOMAIN/fullchain.pem")
+modparam("tlsa", "tls_method", "TLSv1.2+")
+modparam("tlsa", "verify_certificate", 0)
+modparam("tlsa", "require_certificate", 0)
+modparam("tlsa", "private_key", "/etc/letsencrypt/live/PUBDOMAIN/privkey.pem")
+modparam("tlsa", "certificate", "/etc/letsencrypt/live/PUBDOMAIN/fullchain.pem")
 
 # ----- rtpproxy params -----
 modparam("rtpengine", "rtpengine_sock", "udp:127.0.0.1:60000")
