@@ -1,0 +1,13 @@
+[IVRCLA]
+exten => s,1,NoOP(IVR Clasico)
+same => n,Set(TIMEOUT(digit)=4)
+same => n,Set(TIMEOUT(response)=5)
+same => n,Wait(1)
+same => n,Background(prompt04)
+same => n,WaitExten(5)
+exten  => _100[0-3],1,Dial(PJSIP/${EXTEN},60)
+same => n,Hangup
+exten => i,1,Playback(invalid)
+same => n,Goto(IVRCLA,s,2)
+exten => t,1,Dial(PJSIP/1002,60)
+same => n,Hangup()
