@@ -140,14 +140,14 @@ modparam("htable", "htable", "apibanctl=>size=1;initval=0;")
 #!endif
 
 # ----- tls params -----
-modparam("tlsa", "tls_method", "TLSv1")
+modparam("tlsa", "tls_method", "TLSv1.2+")
 modparam("tlsa", "verify_certificate", 0)
 modparam("tlsa", "require_certificate", 0)
 modparam("tlsa", "private_key", "/etc/letsencrypt/live/PUBDOMAIN/privkey.pem")
 modparam("tlsa", "certificate", "/etc/letsencrypt/live/PUBDOMAIN/fullchain.pem")
 
 # ----- rtpproxy params -----
-modparam("rtpengine", "rtpengine_sock", "udp:127.0.0.1:7722")
+modparam("rtpengine", "rtpengine_sock", "udp:127.0.0.1:60000")
 modparam("rtpengine", "rtpengine_disable_tout", 15)
 modparam("rtpengine", "rtpengine_tout_ms", 2000)
 modparam("rtpengine", "rtpengine_retr", 2)
@@ -487,3 +487,4 @@ event_route[htable:mod-init] {
 onsend_route {
 	xlog("L_INFO","[ONSEND_ROUTE] SIP DEBUG: \n$snd(buf)\n");
 }
+#!endif
