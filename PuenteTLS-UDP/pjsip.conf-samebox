@@ -5,10 +5,7 @@ user_agent=CursoKamailio-TLS
 [no-nat]
 type=transport
 protocol=udp
-bind=0.0.0.0:5080
-local_net=IPPrivada/24
-external_media_address=IPPublica
-external_signaling_address=IPPublica
+bind=IPPrivada:5080
 allow_reload=yes
 
 [anonymous]
