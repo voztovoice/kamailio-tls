@@ -1,2 +1,3 @@
 # kamailio
-Kamilio VozToVoice
+Puente TLS/SRTP-UDP/RTP
+Kamilio / Asterisk PBX
